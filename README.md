@@ -1,54 +1,61 @@
-# bai_1_vue
+# BTTH6 - Vue: OrderForm
 
-This template should help get you started developing with Vue 3 in Vite.
+Bài 6: Thiết kế **OrderForm** (menu gọi món) bằng Vue 3 + TypeScript + Vite.
 
-## Recommended IDE Setup
+## Yêu cầu đề bài
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Người dùng chọn sản phẩm nào thì hệ thống **tự động tính tổng tiền**.
+- Nếu trả món thì click lại vào món đó, hệ thống **tự động trừ lại tiền** trong tổng tiền.
+- Sản phẩm **được chọn** hiển thị **màu xanh**; **chưa chọn hoặc đã trả món** hiển thị **màu hồng**.
 
-## Recommended Browser Setup
+## Chức năng
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+### 1. Chọn / trả món
 
-## Type Support for `.vue` Imports in TS
+| Món              | Giá    |
+| ---------------- | ------ |
+| Chocolate freeze | $69.00 |
+| Phindi Hạnh Nhân | $50.00 |
+| Cà Phê Sữa       | $40.00 |
+| Trà Sen Vàng     | $40.00 |
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- Click vào một món để chọn: món chuyển sang màu xanh, tổng tiền được cộng thêm.
+- Click lại vào món đó để trả: món về màu hồng, tổng tiền bị trừ lại.
+- Ví dụ: chọn Chocolate freeze + Phindi Hạnh Nhân → **$119.00**; chọn thêm Cà Phê Sữa → **$159.00**.
 
-## Customize configuration
+### 2. Thanh toán bill (mở rộng)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Nút **Thanh toán** chỉ bấm được khi đã chọn ít nhất 1 món.
+- Màn hình hóa đơn hiển thị thời gian lập, danh sách món đã chọn (STT, tên, giá) và tổng tiền.
+- Nhập **tiền khách đưa**, hệ thống tự tính **tiền thối lại**; nếu thiếu thì báo "Chưa đủ tiền" và khóa nút **Xác nhận**.
+- **Quay lại**: về menu để thêm/trả món (vẫn giữ các món đã chọn).
+- Sau khi xác nhận hiện "Thanh toán thành công!", nút **Đơn mới** sẽ bỏ chọn toàn bộ món và đưa tổng tiền về $0.00.
 
-## Project Setup
+## Cách làm
 
-```sh
-npm install
+- Danh sách món lưu trong `ref`, mỗi món có thuộc tính `active` (đã chọn hay chưa).
+- `@click` đảo giá trị `active` → dùng `:class="{ active: item.active }"` để đổi màu xanh/hồng.
+- Tổng tiền là `computed`: lọc các món `active` rồi cộng giá, nên luôn tự cập nhật khi chọn/trả món.
+- Tiền thối lại cũng là `computed` (`tiền khách đưa - tổng tiền`); luồng màn hình được điều khiển bằng biến `step` (`menu` → `bill` → `done`).
+
+## Cấu trúc thư mục chính
+
+```
+src/
+├── App.vue                      # Hiển thị OrderForm (và ProductList của bài trước)
+├── components/
+│   ├── OrderForm.vue            # Bài 6: menu gọi món + thanh toán bill
+│   └── ProductList.vue          # Bài trước: bảng danh sách sản phẩm
+└── __tests__/
+    ├── App.spec.ts
+    └── OrderForm.spec.ts        # Test chọn/trả món và luồng thanh toán
 ```
 
-### Compile and Hot-Reload for Development
+## Cài đặt và chạy
 
 ```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+npm install      # cài thư viện
+npm run dev      # chạy dev server
+npm run test:unit  # chạy unit test (Vitest)
+npm run build    # kiểm tra kiểu + build production
 ```
