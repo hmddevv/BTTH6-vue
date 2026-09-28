@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- tay cầm -->
+  <path d="M70 34 L96 20 L98 26 L76 40 Z" fill="#9a9a9a" stroke="#555" stroke-width="1.5"/>
+  <!-- thùng xe -->
+  <path d="M4 34 L84 28 Q88 30 84 38 L70 66 Q66 72 56 72 L24 72 Q14 72 10 62 Z"
+        fill="#b8b8b8" stroke="#555" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M8 38 L82 32" stroke="#e2e2e2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M18 60 Q40 66 64 58" stroke="#8c8c8c" stroke-width="2" fill="none"/>
+  <!-- chân đỡ -->
+  <path d="M60 72 L66 90" stroke="#777" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="66" cy="91" rx="6" ry="3" fill="#888"/>
+  <!-- bánh xe -->
+  <circle cx="22" cy="82" r="11" fill="#1e1e1e"/>
+  <circle cx="22" cy="82" r="4" fill="#666"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- cán gỗ -->
+  <line x1="8" y1="6" x2="74" y2="80" stroke="#6b4a1f" stroke-width="4" stroke-linecap="round"/>
+  <line x1="8" y1="6" x2="74" y2="80" stroke="#c9a15a" stroke-width="2" stroke-linecap="round"/>
+  <!-- đầu cào -->
+  <g stroke="#b5292e" stroke-width="2.2" stroke-linecap="round" fill="none">
+    <line x1="72" y1="78" x2="68" y2="97"/>
+    <line x1="72" y1="78" x2="74" y2="98"/>
+    <line x1="72" y1="78" x2="80" y2="97"/>
+    <line x1="72" y1="78" x2="85" y2="94"/>
+    <line x1="72" y1="78" x2="90" y2="89"/>
+    <line x1="72" y1="78" x2="93" y2="83"/>
+    <path d="M69 92 Q82 96 91 86"/>
+  </g>
+  <circle cx="72" cy="78" r="3" fill="#8a1d21"/>
+</svg>

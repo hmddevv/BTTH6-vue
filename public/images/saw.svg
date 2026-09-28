@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <g transform="rotate(-35 50 50)">
+    <!-- lưỡi cưa có răng -->
+    <path d="M40 38 L104 38 L104 46
+             L100 52 L96 46 L92 52 L88 46 L84 52 L80 46 L76 52 L72 46
+             L68 52 L64 46 L60 52 L56 46 L52 52 L48 46 L44 52 L40 56 Z"
+          fill="#9da3a8" stroke="#1a1a1a" stroke-width="2.5" stroke-linejoin="round"/>
+    <line x1="44" y1="42" x2="100" y2="42" stroke="#d9dde0" stroke-width="2"/>
+    <!-- tay cầm -->
+    <path d="M6 30 L42 30 L42 64 L6 64 Z" fill="#c62828" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="15" y="39" width="18" height="16" rx="2" fill="#fff" stroke="#1a1a1a" stroke-width="2.5"/>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- dây -->
+  <path d="M50 44 Q48 32 40 26 Q30 18 40 8" stroke="#111" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- thân tay cầm -->
+  <path d="M22 46 Q50 38 78 46 Q86 48 90 62 L96 86 Q98 96 88 94 L70 76 L30 76 L12 94 Q2 96 4 86 L10 62 Q14 48 22 46 Z"
+        fill="#111"/>
+  <!-- nút X xanh ở giữa -->
+  <g stroke="#2ecc40" stroke-width="3" stroke-linecap="round">
+    <line x1="44" y1="54" x2="54" y2="64"/>
+    <line x1="54" y1="54" x2="44" y2="64"/>
+  </g>
+  <!-- các nút màu -->
+  <circle cx="72" cy="53" r="2.6" fill="#f1c40f"/>
+  <circle cx="67" cy="58" r="2.6" fill="#3498db"/>
+  <circle cx="77" cy="58" r="2.6" fill="#e74c3c"/>
+  <circle cx="72" cy="63" r="2.6" fill="#2ecc40"/>
+  <!-- phím điều hướng -->
+  <rect x="22" y="55" width="12" height="4" fill="#444"/>
+  <rect x="26" y="51" width="4" height="12" fill="#444"/>
+</svg>
